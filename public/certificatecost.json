@@ -1,0 +1,587 @@
+[
+    {
+        "id": 1,
+        "provider": "Google",
+        "FinancialYear": "2023-2024",
+        "January": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "February": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 750
+        },
+        "March": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1100
+        },
+        "April": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 850
+        },
+        "May": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "June": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 650
+        },
+        "July": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "August": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "September": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "October": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 850
+        },
+        "November": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1400
+        },
+        "December": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 980
+        }
+    },
+    {
+        "id": 1,
+        "provider": "Google",
+        "FinancialYear": "2022-2023",
+        "January": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "February": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "March": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "April": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "May": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 870
+        },
+        "June": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "July": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "August": {
+            "Count": 5,
+            "EstimatedCost": 500,
+            "ActualCost": 480
+        },
+        "September": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "October": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 670
+        },
+        "November": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "December": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 880
+        }
+    },
+    {
+        "id": 1,
+        "provider": "Google",
+        "FinancialYear": "2021-2022",
+        "January": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "February": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 860
+        },
+        "March": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "April": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 680
+        },
+        "May": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "June": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "July": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "August": {
+            "Count": 4,
+            "EstimatedCost": 400,
+            "ActualCost": 390
+        },
+        "September": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "October": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "November": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "December": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 980
+        }
+    },
+    {
+        "id": 2,
+        "provider": "Azure",
+        "FinancialYear": "2023-2024",
+        "January": {
+            "Count": 5,
+            "EstimatedCost": 500,
+            "ActualCost": 480
+        },
+        "February": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "March": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 670
+        },
+        "April": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 750
+        },
+        "May": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 870
+        },
+        "June": {
+            "Count": 4,
+            "EstimatedCost": 400,
+            "ActualCost": 380
+        },
+        "July": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "August": {
+            "Count": 3,
+            "EstimatedCost": 300,
+            "ActualCost": 290
+        },
+        "September": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 570
+        },
+        "October": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 680
+        },
+        "November": {
+            "Count": 5,
+            "EstimatedCost": 500,
+            "ActualCost": 480
+        },
+        "December": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 770
+        }
+    },
+    {
+        "id": 2,
+        "provider": "Azure",
+        "FinancialYear": "2022-2023",
+        "January": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 570
+        },
+        "February": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 680
+        },
+        "March": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 770
+        },
+        "April": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 880
+        },
+        "May": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "June": {
+            "Count": 5,
+            "EstimatedCost": 500,
+            "ActualCost": 480
+        },
+        "July": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "August": {
+            "Count": 4,
+            "EstimatedCost": 400,
+            "ActualCost": 380
+        },
+        "September": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 670
+        },
+        "October": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "November": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "December": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 880
+        }
+    },
+    {
+        "id": 2,
+        "provider": "Azure",
+        "FinancialYear": "2021-2022",
+        "January": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 680
+        },
+        "February": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "March": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 880
+        },
+        "April": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "May": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "June": {
+            "Count": 6,
+            "EstimatedCost": 600,
+            "ActualCost": 580
+        },
+        "July": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "August": {
+            "Count": 5,
+            "EstimatedCost": 500,
+            "ActualCost": 480
+        },
+        "September": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "October": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 880
+        },
+        "November": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "December": {
+            "Count": 7,
+            "EstimatedCost": 700,
+            "ActualCost": 680
+        }
+    },
+    {
+        "id": 3,
+        "provider": "AWS",
+        "FinancialYear": "2023-2024",
+        "January": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1450
+        },
+        "February": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "March": {
+            "Count": 16,
+            "EstimatedCost": 1600,
+            "ActualCost": 1550
+        },
+        "April": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "May": {
+            "Count": 17,
+            "EstimatedCost": 1700,
+            "ActualCost": 1650
+        },
+        "June": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "July": {
+            "Count": 20,
+            "EstimatedCost": 2000,
+            "ActualCost": 1950
+        },
+        "August": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "September": {
+            "Count": 18,
+            "EstimatedCost": 1800,
+            "ActualCost": 1750
+        },
+        "October": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "November": {
+            "Count": 19,
+            "EstimatedCost": 1900,
+            "ActualCost": 1850
+        },
+        "December": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1450
+        }
+    },
+    {
+        "id": 3,
+        "provider": "AWS",
+        "FinancialYear": "2022-2023",
+        "January": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "February": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "March": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1450
+        },
+        "April": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "May": {
+            "Count": 16,
+            "EstimatedCost": 1600,
+            "ActualCost": 1550
+        },
+        "June": {
+            "Count": 10,
+            "EstimatedCost": 1000,
+            "ActualCost": 950
+        },
+        "July": {
+            "Count": 18,
+            "EstimatedCost": 1800,
+            "ActualCost": 1750
+        },
+        "August": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 870
+        },
+        "September": {
+            "Count": 17,
+            "EstimatedCost": 1700,
+            "ActualCost": 1650
+        },
+        "October": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "November": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1450
+        },
+        "December": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        }
+    },
+    {
+        "id": 3,
+        "provider": "AWS",
+        "FinancialYear": "2021-2022",
+        "January": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        },
+        "February": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "March": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "April": {
+            "Count": 11,
+            "EstimatedCost": 1100,
+            "ActualCost": 1050
+        },
+        "May": {
+            "Count": 15,
+            "EstimatedCost": 1500,
+            "ActualCost": 1450
+        },
+        "June": {
+            "Count": 9,
+            "EstimatedCost": 900,
+            "ActualCost": 870
+        },
+        "July": {
+            "Count": 17,
+            "EstimatedCost": 1700,
+            "ActualCost": 1650
+        },
+        "August": {
+            "Count": 8,
+            "EstimatedCost": 800,
+            "ActualCost": 780
+        },
+        "September": {
+            "Count": 16,
+            "EstimatedCost": 1600,
+            "ActualCost": 1550
+        },
+        "October": {
+            "Count": 12,
+            "EstimatedCost": 1200,
+            "ActualCost": 1150
+        },
+        "November": {
+            "Count": 14,
+            "EstimatedCost": 1400,
+            "ActualCost": 1350
+        },
+        "December": {
+            "Count": 13,
+            "EstimatedCost": 1300,
+            "ActualCost": 1250
+        }
+    }
+]
