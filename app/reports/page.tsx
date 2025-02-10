@@ -643,7 +643,6 @@ import React from "react";
 import axios from "axios";
 import LdNominationTable from "@/components/ldtable";
 
-
 // Types
 interface RowData {
   nominationId: number;

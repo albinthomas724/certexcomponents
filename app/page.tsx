@@ -1,33 +1,23 @@
-
-
 import MenuBar from "@/components/menubar";
 import LdCards from "@/components/ldcards";
 import BarGraph from "@/components/newldbarchart";
-
-
+import LdPendingActionsList from "@/components/ldpendingaction";
 
 export default function Home() {
   return (
-    <div className="bg-whitegrey">
+    <div className="bg-whitegrey flex h-screen p-4">
+      {/* Left Section */}
+      <div className="flex-1">
+        <LdCards />
+        <div className="z-10 p-1">
+          <BarGraph />
+        </div>
+      </div>
 
-<LdCards/>
-<div className="w-3/4 p-1"><BarGraph/></div>
-
-
-{/* <div className="flex flex-col"><div><LdCards/></div><div className="flex flex-col"><BarGraph/><LDCostChart/>
-</div></div> */}
-{/* 
-<PendingActions/> */}
-{/* <LDCostChart/>
-<BarGraph/>
- */}
-
-    {/* <ModalPage/> */}
-    
-    {/* <LdAdmin/> */}
+      {/* Right Section (Pending Actions List) */}
+      <div className="w-1/3 min-w-[400px] h-full overflow-hidden p-2">
+        <LdPendingActionsList />
+      </div>
     </div>
-//     <div>
-// {/* <ProductCart/> */}
-//     </div>
   );
 }

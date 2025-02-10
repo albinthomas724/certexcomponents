@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "username": "johndoe",
+      "certification_name": "AWS Certified Solutions Architect",
+      "du": "Cloud Engineering",
+      "approved_by_manager": true,
+      "approved_by_du_head": false,
+      "level": "Advanced",
+      "nomination_date":"2025-02-06T14:30:00.000Z",
+      "remarks_manager":"i have approved the nomination",
+      "remarks_duhead":"request is approved"
+    },
+    {
+      "id": 2,
+      "username": "janesmith",
+      "certification_name": "Google Professional Cloud Architect",
+      "du": "DevOps Team",
+      "approved_by_manager": true,
+      "approved_by_du_head": true,
+      "level": "Expert",
+      "nomination_date":"2025-02-06T14:30:00.000Z",
+      "remarks_manager":"i have approved the nomination",
+      "remarks_duhead":"request is approved"
+    },
+    {
+      "id": 3,
+      "username": "alicebrown",
+      "certification_name": "PMP Certification",
+      "du": "Project Management",
+      "approved_by_manager": false,
+      "approved_by_du_head": false,
+      "level": "Intermediate",
+      "nomination_date":"2025-02-06T14:30:00.000Z",
+      "remarks_manager":"i have approved the nomination",
+      "remarks_duhead":"request is approved"
+    }
+  ]
+  

@@ -8,7 +8,7 @@ const PendingActions = () => {
     <Menu className='h-screen'
       mode="inline"
       defaultSelectedKeys={['231']}
-      
+
       style={{ width: 156 }}
       
     />
