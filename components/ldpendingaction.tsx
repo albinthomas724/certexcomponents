@@ -1,29 +1,39 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FiCheck, FiTrash2, FiX, FiSearch } from "react-icons/fi";
+import {
+  FiCheck,
+  FiTrash2,
+  FiX,
+  FiSearch,
+  FiChevronsDown,
+  FiChevronUp,
+  FiChevronsUp,
+} from "react-icons/fi";
 import { format } from "date-fns";
 
-
 interface Certification {
-    id: string;
-    username: string;
-    certification_name: string;
-    level: string;
-    du: string;
-    nomination_date: string;
-    approved_by_manager?: boolean;
-    approved_by_du_head?: boolean;
-    remarks_manager?: string;
-    remarks_duhead?: string;
-  }
+  id: string;
+  username: string;
+  certification_name: string;
+  level: string;
+  du: string;
+  nomination_date: string;
+  approved_by_manager?: boolean;
+  approved_by_du_head?: boolean;
+  remarks_manager?: string;
+  remarks_duhead?: string;
+}
 
 const LdPendingActionsList = () => {
-    const [searchTerm, setSearchTerm] = useState<string>("");
-    const [certifications, setCertifications] = useState<Certification[]>([]);
-    const [showModal, setShowModal] = useState<boolean>(false);
-    const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
-    const [processingIds, setProcessingIds] = useState<{ [key: string]: boolean }>({});
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [certifications, setCertifications] = useState<Certification[]>([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [processingIds, setProcessingIds] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   useEffect(() => {
     const fetchCertifications = async () => {
@@ -39,7 +49,7 @@ const LdPendingActionsList = () => {
   }, []);
 
   // Function to handle Approve/Reject
-  const handleAction = async (certId:string, actionType:string) => {
+  const handleAction = async (certId: string, actionType: string) => {
     setProcessingIds((prev) => ({ ...prev, [certId]: true })); // Start processing
 
     try {
@@ -59,7 +69,6 @@ const LdPendingActionsList = () => {
         console.error(`Failed to ${actionType}`);
         // Optionally, notify the user about the failure here
       }
-
     } catch (error) {
       console.error(`Error while trying to ${actionType}:`, error);
       alert(`Failed to ${actionType}. Please try again.`);
@@ -74,7 +83,6 @@ const LdPendingActionsList = () => {
     setShowModal(true);
     document.body.classList.add("overflow-hidden"); // Prevent scrolling
   };
-  
 
   const closeModal = () => {
     setShowModal(false);
@@ -83,12 +91,17 @@ const LdPendingActionsList = () => {
 
   const confirmRejection = async () => {
     if (!selectedCert) return;
-    
+
     try {
-      const response = await fetch(`/api/certifications/${selectedCert.id}/reject`, { method: "POST" });
-  
+      const response = await fetch(
+        `/api/certifications/${selectedCert.id}/reject`,
+        { method: "POST" }
+      );
+
       if (response.ok) {
-        setCertifications((prev) => prev.filter((cert) => cert.id !== selectedCert.id));
+        setCertifications((prev) =>
+          prev.filter((cert) => cert.id !== selectedCert.id)
+        );
       } else {
         console.error("Failed to reject");
       }
@@ -99,7 +112,6 @@ const LdPendingActionsList = () => {
       closeModal();
     }
   };
-  
 
   const filteredCertifications = certifications.filter(
     (cert) =>
@@ -110,9 +122,9 @@ const LdPendingActionsList = () => {
       cert.level.toLowerCase().includes(searchTerm.toLowerCase()) ||
       cert.du.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const formatDate = (dateString:string):string => {
+  const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    return format(date, "dd/MM/yyyy hh:mm a");
+    return format(date, "dd/MM/yyyy");
   };
 
   return (
@@ -152,73 +164,93 @@ const LdPendingActionsList = () => {
                     {cert.level}
                   </span>
                 </div>
-                <p className="text-gray-600">Employee: {cert.username}</p>
-                <p className="text-gray-600">DU: {cert.du}</p>
-                <p className="text-gray-600">
-                  Nomination Date:{formatDate(cert.nomination_date)}
-                </p>
-
-                <div className="flex justify-evenly items-center py-4 ">
-                  <button
-                    className={`inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-200 ${
-                      processingIds[cert.id]
-                        ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                        : "bg-green-100 text-green-700 hover:bg-green-200"
-                    }`}
-                    onClick={() => handleAction(cert.id, "approve")}
-                    disabled={processingIds[cert.id]} // Disable only the button being processed
-                  >
-                    <FiCheck className="mr-1" />
-                    Approve
-                  </button>
-
-                  <button
-                    className={`inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-200 ${
-                      processingIds[cert.id]
-                        ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                        : "bg-red-100 text-red-700 hover:bg-red-200"
-                    }`}
-                    onClick={() => handleRejectClick(cert)}
-                    disabled={processingIds[cert.id]} // Disable only the button being processed
-                  >
-                    <FiX className="mr-1" />
-                    Reject
-                  </button>
-                </div>
-                {/* Approval Information (Hidden until card is hovered) */}
-                <div className="hidden group-hover:block border-t border-gray-100">
-                  {/* Nested group to trigger dropdown */}
-                  <div className="relative group/approval inline-block p-2 rounded-lg cursor-pointer">
-                    <p className="text-gray-600">
-                      Approved by Manager:{" "}
-                      {cert.approved_by_manager ? "Yes" : "No"}
+                <div className="mt-2">
+                  <div className="flex justify-between">
+                    <p className="text-black-600 font-semibold">
+                      {cert.username}
                     </p>
-                    <p className="text-gray-600">
-                      Approved by DU Head:{" "}
-                      {cert.approved_by_du_head ? "Yes" : "No"}
+                    <p className="text-gray-500 font-semibold text-xs bg-slate-200 rounded-lg p-1 inline-block">
+                      {cert.du}
+                    </p>
+                  </div>
+
+                  <div id="finit" className="flex flex-row items-center justify-between ">
+                    <p className="text-gray-600 mt-1">
+                      {formatDate(cert.nomination_date)}
                     </p>
 
-                    {/* Dropdown Menu (Appears on Hover) */}
-                    <div className="absolute  transform  top-full left-0 opacity-0 invisible group-hover/approval:opacity-100 group-hover/approval:visible transition-all duration-200  overflow-visible z-50 translate-y-2 w-72 ">
-                      <div className="bg-white rounded-lg shadow-lg p-2 border border-gray-200 w-full">
-                        <ul className="space-y-1">
-                          <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
-                            <strong>Manager Remarks:</strong>
-                            <p className="text-sm text-gray-600">
-                              {cert.remarks_manager || "No remarks provided"}
-                            </p>
-                          </li>
-                          <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
-                            <strong>DU Head Remarks:</strong>
-                            <p className="text-sm text-gray-600">
-                              {cert.remarks_duhead || "No remarks provided"}
-                            </p>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="flex justify-evenly items-center py-4">
+                      <button
+                        className={`inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-200 ${
+                          processingIds[cert.id]
+                            ? "bg-gray-200 text-gray-600 cursor-not-allowed"
+                            : "bg-green-100 text-green-700 hover:bg-green-200"
+                        }`}
+                        onClick={() => handleAction(cert.id, "approve")}
+                        disabled={processingIds[cert.id]} // Disable only the button being processed
+                      >
+                        <FiCheck className="mr-1" />
+                      </button>
+
+                      <button
+                        className={`inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-200 ${
+                          processingIds[cert.id]
+                            ? "bg-gray-200 text-gray-600 cursor-not-allowed"
+                            : "bg-red-100 text-red-700 hover:bg-red-200"
+                        }`}
+                        onClick={() => handleRejectClick(cert)}
+                        disabled={processingIds[cert.id]} // Disable only the button being processed
+                      >
+                        <FiX className="mr-1" />
+                      </button>
                     </div>
+                
+
+                  <div>
+                    <button
+                      className="  text-black  
+              font-thin 
+             transition-all 
+             duration-300 transform hover:scale-105 active:scale-95 text-sm "
+                      onClick={() => setIsVisible(!isVisible)}
+                    >
+                      {isVisible ? <FiChevronsUp /> : <FiChevronsDown />}
+                    </button>
+                    </div>
+                    {isVisible && (
+                      <div className=" border-t border-gray-100">
+                        <div className="relative inline-block p-2 rounded-lg">
+                          <p className="text-gray-600">
+                            Approved by Manager:{" "}
+                            {cert.approved_by_manager ? "Yes" : "No"}
+                          </p>
+                          <p className="text-gray-600">
+                            Approved by DU Head:{" "}
+                            {cert.approved_by_du_head ? "Yes" : "No"}
+                          </p>
+                        </div>
+
+                        <div className="w-full">
+                          <ul className="space-y-1">
+                            <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
+                              <strong>Manager Remarks:</strong>
+                              <p className="text-sm text-gray-600">
+                                {cert.remarks_manager || "No remarks provided"}
+                              </p>
+                            </li>
+                            <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
+                              <strong>DU Head Remarks:</strong>
+                              <p className="text-sm text-gray-600">
+                                {cert.remarks_duhead || "No remarks provided"}
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+                {/* aaaaaa */}
               </div>
             ))}
           </div>
