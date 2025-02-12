@@ -10,6 +10,7 @@ import {
   FiChevronUp,
   FiChevronsUp,
 } from "react-icons/fi";
+import { FiCalendar } from "react-icons/fi";
 import { format } from "date-fns";
 
 interface Certification {
@@ -136,7 +137,7 @@ const LdPendingActionsList = () => {
           <input
             type="text"
             placeholder="Search certifications..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg  focus:outline-none focus:ring-0"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-0"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -156,6 +157,7 @@ const LdPendingActionsList = () => {
                 key={cert.id}
                 className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-3"
               >
+                {/* Certification Header */}
                 <div className="flex justify-between items-start">
                   <h3 className="text-lg font-semibold text-gray-900">
                     {cert.certification_name}
@@ -164,7 +166,17 @@ const LdPendingActionsList = () => {
                     {cert.level}
                   </span>
                 </div>
-                <div className="mt-2">
+
+                {/* date with calendar icon */}
+
+                <div>
+                  <p className="text-gray-400 text-xs flex flex-row gap-1">
+                    <FiCalendar/>{formatDate(cert.nomination_date)}
+                  </p>
+                </div>
+
+                {/* Certification Details */}
+                <div className="mt-4">
                   <div className="flex justify-between">
                     <p className="text-black-600 font-semibold">
                       {cert.username}
@@ -174,12 +186,11 @@ const LdPendingActionsList = () => {
                     </p>
                   </div>
 
-                  <div id="finit" className="flex flex-row items-center justify-between ">
-                    <p className="text-gray-600 mt-1">
-                      {formatDate(cert.nomination_date)}
-                    </p>
+                  <div className="flex flex-row items-center justify-between ">
 
-                    <div className="flex justify-evenly items-center py-4">
+
+                    {/* Action Buttons */}
+                    <div className="flex justify-evenly gap-2 items-center py-4">
                       <button
                         className={`inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-200 ${
                           processingIds[cert.id]
@@ -187,9 +198,9 @@ const LdPendingActionsList = () => {
                             : "bg-green-100 text-green-700 hover:bg-green-200"
                         }`}
                         onClick={() => handleAction(cert.id, "approve")}
-                        disabled={processingIds[cert.id]} // Disable only the button being processed
+                        disabled={processingIds[cert.id]}
                       >
-                        <FiCheck className="mr-1" />
+                       <FiCheck className="mr-1" />Accept
                       </button>
 
                       <button
@@ -199,58 +210,58 @@ const LdPendingActionsList = () => {
                             : "bg-red-100 text-red-700 hover:bg-red-200"
                         }`}
                         onClick={() => handleRejectClick(cert)}
-                        disabled={processingIds[cert.id]} // Disable only the button being processed
+                        disabled={processingIds[cert.id]}
                       >
-                        <FiX className="mr-1" />
+                        <FiX className="mr-1" />Reject
                       </button>
                     </div>
-                
 
-                  <div>
-                    <button
-                      className="  text-black  
-              font-thin 
-             transition-all 
-             duration-300 transform hover:scale-105 active:scale-95 text-sm "
-                      onClick={() => setIsVisible(!isVisible)}
-                    >
-                      {isVisible ? <FiChevronsUp /> : <FiChevronsDown />}
-                    </button>
+                    {/* Expand Button */}
+                    <div>
+                      <button
+                        className="text-black font-thin transition-all duration-300 transform hover:scale-105 active:scale-95 text-sm flex items-center underline"
+                        onClick={() => setIsVisible(!isVisible)}
+                      >
+                        more details
+                        {isVisible ? <FiChevronsUp /> : <FiChevronsDown />}
+                      </button>
                     </div>
-                    {isVisible && (
-                      <div className=" border-t border-gray-100">
-                        <div className="relative inline-block p-2 rounded-lg">
-                          <p className="text-gray-600">
-                            Approved by Manager:{" "}
-                            {cert.approved_by_manager ? "Yes" : "No"}
-                          </p>
-                          <p className="text-gray-600">
-                            Approved by DU Head:{" "}
-                            {cert.approved_by_du_head ? "Yes" : "No"}
-                          </p>
-                        </div>
-
-                        <div className="w-full">
-                          <ul className="space-y-1">
-                            <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
-                              <strong>Manager Remarks:</strong>
-                              <p className="text-sm text-gray-600">
-                                {cert.remarks_manager || "No remarks provided"}
-                              </p>
-                            </li>
-                            <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
-                              <strong>DU Head Remarks:</strong>
-                              <p className="text-sm text-gray-600">
-                                {cert.remarks_duhead || "No remarks provided"}
-                              </p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    )}
                   </div>
+
+                  {/* Expanded Details */}
+                  {isVisible && (
+                    <div className="border-t border-gray-100">
+                      <div className="relative inline-block p-2 rounded-lg">
+                        <p className="text-gray-600">
+                          Approved by Manager:{" "}
+                          {cert.approved_by_manager ? "Yes" : "No"}
+                        </p>
+                        <p className="text-gray-600">
+                          Approved by DU Head:{" "}
+                          {cert.approved_by_du_head ? "Yes" : "No"}
+                        </p>
+                      </div>
+
+                      {/* Remarks Section */}
+                      <div className="w-full">
+                        <ul className="space-y-1">
+                          <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
+                            <strong>Manager Remarks:</strong>
+                            <p className="text-sm text-gray-600">
+                              {cert.remarks_manager || "No remarks provided"}
+                            </p>
+                          </li>
+                          <li className="px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-150">
+                            <strong>DU Head Remarks:</strong>
+                            <p className="text-sm text-gray-600">
+                              {cert.remarks_duhead || "No remarks provided"}
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
                 </div>
-                {/* aaaaaa */}
               </div>
             ))}
           </div>

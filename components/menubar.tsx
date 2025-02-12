@@ -150,7 +150,7 @@ export default function MenuBar() {
     { name: "Overview", route: "/" },
     { name: "Reports", route: "/reports" },
     { name: "Cost Analytics", route: "/costanalytics" },
-    { name: "Notifications", route: "/notifications" },
+    { name: "Notifications", route: "/notification" },
   ];
 
   return (

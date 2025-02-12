@@ -15,7 +15,7 @@ export default function Home() {
       </div>
 
       {/* Right Section (Pending Actions List) */}
-      <div className="w-1/3 min-w-[400px] h-full overflow-hidden p-2">
+      <div className="w-1/3 min-w-[400px] h-full overflow-hidden p-1">
         <LdPendingActionsList />
       </div>
     </div>
